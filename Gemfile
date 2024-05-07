@@ -7,6 +7,8 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 
 gem "bootstrap", "~> 5.3.3"
 
+gem "dartsass-sprockets"
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
