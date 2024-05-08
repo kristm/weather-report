@@ -6,7 +6,11 @@ export default class extends Controller {
   }
 
   select(event) {
-    //post('/forecast', { body: data, responseKind: 'turbo-stream' });
-    console.log(event.target.getAttribute('data-lat'));
+    const coords = {};
+    coords['lat'] = event.target.getAttribute('data-lat');
+    coords['long'] = event.target.getAttribute('data-long');
+    const data = {coords: coords};
+    post('/forecast', { body: data, responseKind: 'turbo-stream' });
+    console.log(data, event.target.getAttribute('data-lat'));
   }
 }
