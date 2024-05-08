@@ -1,6 +1,14 @@
 class Forecasts < ApplicationRecord
   belongs_to :city
 
+  def self.serialize(data)
+    data.join("|") unless data.nil?
+  end
+
+  def self.unserialize(data)
+    data.split("|") unless data.nil?
+  end
+
   def weather_codes
     codes.split("|")
   end
