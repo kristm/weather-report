@@ -5,7 +5,8 @@ class HomeController < ApplicationController
 
   def forecast
     response = OpenMeteo::Client.forecast coords_params['lat'], coords_params['long']
-    render turbo_stream: turbo_stream.update('report', "Weather Codes: #{response['daily']['weather_code']} #{t('weather_codes.0')}")
+    report = OpenMeteo::Client.report response
+    render turbo_stream: turbo_stream.update('report', "7 day Forecast: #{report.join(', ')}")
   end
 
 
