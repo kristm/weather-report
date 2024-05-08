@@ -100,6 +100,7 @@ GEM
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
+    csv (3.3.0)
     dartsass-ruby (3.0.2)
       sass-embedded (~> 1.54, < 1.67)
     dartsass-sprockets (3.0.0)
@@ -120,6 +121,10 @@ GEM
     google-protobuf (3.25.3-aarch64-linux)
     google-protobuf (3.25.3-arm64-darwin)
     google-protobuf (3.25.3-x86_64-linux)
+    httparty (0.22.0)
+      csv
+      mini_mime (>= 1.0.0)
+      multi_xml (>= 0.5.2)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -146,6 +151,7 @@ GEM
     mini_mime (1.1.5)
     minitest (5.22.3)
     msgpack (1.7.2)
+    multi_xml (0.6.0)
     mutex_m (0.2.0)
     net-imap (0.4.10)
       date
@@ -270,6 +276,7 @@ DEPENDENCIES
   capybara
   dartsass-sprockets
   debug
+  httparty
   importmap-rails
   jbuilder
   puma (>= 5.0)
