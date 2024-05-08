@@ -1,6 +1,10 @@
 module OpenMeteo
   class Client
     def self.forecast(lat, long)
+      # fetch Forecast record if exist
+      # city = City.find_by_lat_and_long lat, long
+      # f = Forecasts.where(city: city).last
+      # data = f.seven_day_forecast if f.created_at > 1.day.ago
       response = OpenMeteo::Request.forecast(lat, long)
       data = JSON.parse response.body
       data["daily"]
