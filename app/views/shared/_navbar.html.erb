@@ -18,7 +18,7 @@
           </a>
           <ul class="dropdown-menu" data-controller="cities">
             <%- @cities.each do |city| %>
-              <li><a class="dropdown-item" href="#" data-lat="<%= city.lat %>" data-long="<%= city.long %>" data-action="cities#select"><%= city.name %></a></li>
+              <li><a class="dropdown-item" data-lat="<%= city.lat %>" data-long="<%= city.long %>" data-action="cities#select"><%= city.name %></a></li>
             <% end %>
           </ul>
         </li>
