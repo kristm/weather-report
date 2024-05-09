@@ -4,6 +4,7 @@ module OpenMeteo
       # fetch Forecast record if exist
       city = City.find_by_lat_and_long lat, long
       if (forecast = Forecast.where(city_id: city.id, created_at: 24.hours.ago...).last)
+        #use forecast record if a recent one exist
         forecast.seven_day_forecast
       else
         response = OpenMeteo::Request.forecast(lat, long)
@@ -12,7 +13,6 @@ module OpenMeteo
         self.persist(city, data["daily"])
         data["daily"]
       end
-
     end
 
     def self.report(data)

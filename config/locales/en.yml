@@ -28,7 +28,7 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  select_city: "Select City"
   weather_codes:
     0: 'Clear Sky'
     1: 'Mainly Clear'
