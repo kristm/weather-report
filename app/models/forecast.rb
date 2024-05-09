@@ -11,7 +11,6 @@ class Forecast < ApplicationRecord
   end
 
   def seven_day_forecast
-    temps ||= temps_min_max
     {
       "city" => city.name,
       "time" => unserialize(days),
