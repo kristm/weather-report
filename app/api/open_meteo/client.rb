@@ -16,7 +16,12 @@ module OpenMeteo
     end
 
     def self.report(data)
-      weather_codes = data["weather_code"].map { |code| I18n.t "weather_codes.#{code}" }
+      {
+        codes: data["weather_code"],
+        days: data["time"],
+        sunrise: data["sunrise"].first,
+        sunset: data["sunset"].first
+      }
     end
 
     def self.persist(city, data)
