@@ -7,9 +7,9 @@ module ApplicationHelper
 
   def show_icon(code)
     icon = case code
-      when 0
+      when 0..1
         "sunny-day.svg"
-      when 1..48
+      when 2..48
         "cloudy.svg"
       when 49..61
         "lightrain.svg"
