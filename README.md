@@ -1,24 +1,27 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+<pre>
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMWXXNMMMMMMMWXXNMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMXxoooKMMMMMXxoooOWMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMXol00ccdddddcckOl:OWMMMMMMMMMMMMMM
+MMMMMMMMMMMWKxdxl,clc;,;;;;;;;:::,lKMMMMMMMMMMMMMM
+MMMMMMMMMMM0c,,..';;;c;;;::;;::;;;;kMMMMMMMMMMMMMM
+MMMMMMMMMMMO;'''.';;;:;;,',,;;;;;;:OMMMMMMMMMMMMMM
+MMMMMMMMMMMKc,;;,',;:::;,..';;::;,lXMMMMMMMMMMMMMM
+MMMMMMMMMMMWd;:::;,;;;;,'''',;;;,,xWMMMMMMMMMMMMMM
+MMMMMMMMMMMMKl;:::::cll:;cl:;clc:,oNMMMMMMMMMMMMMM
+MMMMMMMMMMMMWO:;:::::::;cooc;::;;;c0MMMMMMMMMMMMMM
+MMMMMMMMMMMMMNo;;::::::;;;;;;:;,,;;oNMMMMMMMMMMMMM
+MMMMMMMMMMMMMWx;;::::::;::::::;',:;;kWMMMMMMMMMMMM
+MMMMMMMMMMMMMXl;:::::::,,;;:::;',::;cKMMMMMMMMMMMM
+MMMMMMMMMMMMXo;;:::::::,,;;::;,';::;;dWMMMMMMMMMMM
+MMMMMMMMMMMWx;;::::::::,';;::;',::::,lKMMMMMMMMMMM
+MMMMMMMMMMM0c;:::::::::,',;:;,';::::;c0MMMMMMMMMMM
+MMMMMMMMMMMO:;:::::::::,'';:;',::::;;cKMMMMMMMMMMM
+MMMMMMMMMMM0c;:;;,,;;::,'',:,.';;:;,,oNMMMMMMMMMMM
+MMMMMMMMMMMWO:,'''''',,''',;,..',,.'lKMMMMMMMMMMMM
+MMMMMMMMMMMMWKxlc::cdkko,'',;odcccoONMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMWWNNWMMMWK00KXWMWNWMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
+</pre>
