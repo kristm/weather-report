@@ -3,7 +3,7 @@ module OpenMeteo
     def self.forecast(lat, long)
       # fetch Forecast record if exist
       # city = City.find_by_lat_and_long lat, long
-      # f = Forecasts.where(city: city).last
+      # f = Forecast.where(city: city).last
       # data = f.seven_day_forecast if f.created_at > 1.day.ago
       response = OpenMeteo::Request.forecast(lat, long)
       data = JSON.parse response.body
@@ -16,14 +16,9 @@ module OpenMeteo
 
     def self.persist(lat, long, data)
       city = City.find_by_lat_and_long lat, long
-      f = Forecasts.new 
+      f = Forecast.new 
       f.city_id = city.id
-      f.days = Forecasts.serialize(data["time"])
-      f.codes = Forecasts.serialize(data["weather_code"])
-      f.min_temps = Forecasts.serialize(data["temperature_2m_min"])
-      f.max_temps = Forecasts.serialize(data["temperature_2m_max"])
-      f.sunrise_times = Forecasts.serialize(data["sunrise"])
-      f.sunset_times = Forecasts.serialize(data["sunset"])
+      f.serialize_forecast(data)
       f.save
     end
   end

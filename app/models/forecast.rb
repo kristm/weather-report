@@ -1,12 +1,13 @@
-class Forecasts < ApplicationRecord
+class Forecast < ApplicationRecord
   belongs_to :city
 
-  def self.serialize(data)
-    data.join("|") unless data.nil?
-  end
-
-  def self.unserialize(data)
-    data.split("|") unless data.nil?
+  def serialize_forecast(data)
+    self.days = serialize(data["time"])
+    self.codes = serialize(data["weather_code"])
+    self.min_temps = serialize(data["temperature_2m_min"])
+    self.max_temps = serialize(data["temperature_2m_max"])
+    self.sunrise_times = serialize(data["sunrise"])
+    self.sunset_times = serialize(data["sunset"])
   end
 
   def weather_codes
@@ -42,4 +43,15 @@ class Forecasts < ApplicationRecord
   def dates
     days.split("|") unless days.nil?
   end
+
+  private
+  
+  def serialize(data)
+    data.join("|") unless data.nil?
+  end
+
+  def unserialize(data)
+    data.split("|") unless data.nil?
+  end
+
 end
