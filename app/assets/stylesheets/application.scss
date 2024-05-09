@@ -1,1 +1,23 @@
-@import "bootstrap"
+@import "bootstrap";
+
+h1 { text-align: center }
+#report {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  max-width: 900px;
+}
+
+#report dl {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+
+  dd {
+    width: calc(100%/7);
+    font-size: 0.9rem;
+    line-height: 1rem;
+    text-align: center;
+  }
+}
