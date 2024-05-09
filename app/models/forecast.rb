@@ -11,26 +11,26 @@ class Forecast < ApplicationRecord
   end
 
   def weather_codes
-    codes.split("|")
+    codes.split("|").map { |code| code.to_i }
   end
 
   def seven_day_forecast
     temps ||= temps_min_max
     sunrises ||= sunrise_sunset
     {
-      city: city.name,
-      time: dates,
-      weather_code: weather_codes,
-      temperature_2m_min: temps[:min],
-      temperature_2m_max: temps[:max],
-      sunrise: sunrises[:sunrises],
-      sunset: sunrises[:sunsets]
+      "city" => city.name,
+      "time" => dates,
+      "weather_code" => weather_codes,
+      "temperature_2m_min" => temps[:min],
+      "temperature_2m_max" => temps[:max],
+      "sunrise" => sunrises[:sunrises],
+      "sunset" => sunrises[:sunsets]
     }
   end
 
   def temps_min_max
-    min = min_temps.split("|") unless min_temps.nil?
-    max = max_temps.split("|") unless max_temps.nil?
+    min = min_temps.split("|").map(&:to_f) unless min_temps.nil?
+    max = max_temps.split("|").map(&:to_f) unless max_temps.nil?
     {min: min, max: max}
   end
 
