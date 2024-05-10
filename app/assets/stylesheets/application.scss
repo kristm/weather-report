@@ -31,8 +31,11 @@ h1 { text-align: center }
     width: calc(100%/2)!important;
     flex: 100%;
     flex-direction: row-reverse;
-    justify-content: flex-end;
-    .details { align-items: flex-start }
+    justify-content: center;
+    .details { 
+      align-items: flex-start;
+      justify-content: center;
+    }
     .icon { width: 300px; }
 
   }
@@ -46,5 +49,29 @@ h1 { text-align: center }
     text-align: center;
     .details { display: flex; flex-direction: column; }
     span { height: 50px; }
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #report {
+    align-items: center;
+    dl {
+      flex-direction: column;
+      align-items: center;
+      dd {
+        padding-top: 6rem;
+        flex-direction: column-reverse;
+        width: 50%;
+        span { height: 20px }
+      }
+      dd:first-child {
+        flex-direction: column;
+        flex-direction: column-reverse;
+        align-items: center;
+        .details {
+          align-items: center;
+        }
+      }
+    }
   }
 }
