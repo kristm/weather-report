@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_08_050454) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_10_135505) do
   create_table "cities", force: :cascade do |t|
     t.string "name", null: false
     t.float "long", null: false
     t.float "lat", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "timezone"
   end
 
   create_table "forecasts", force: :cascade do |t|

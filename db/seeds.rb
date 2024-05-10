@@ -8,15 +8,15 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 cities = [
-  {:name => "Tokyo", :lat => 35.45, :long => 139.45},
-  {:name => "Taipei", :lat => 25.02, :long => 121.31},
-  {:name => "Manila", :lat => 14.35, :long => 120.58},
-  {:name => "Singapore", :lat => 1.25, :long => 103.50},
-  {:name => "Berlin", :lat => 52.32, :long => 13.25},
-  {:name => "Madrid", :lat => 40.25, :long => 3.42},
-  {:name => "Buenos Aires", :lat => 34.34, :long => 58.03},
+  {:name => "Tokyo", :lat => 35.45, :long => 139.45, :timezone => "Asia/Tokyo"},
+  {:name => "Taipei", :lat => 25.02, :long => 121.31, :timezone => "Asia/Taipei"},
+  {:name => "Manila", :lat => 14.35, :long => 120.58, :timezone => "Asia/Taipei"},
+  {:name => "Singapore", :lat => 1.25, :long => 103.50, :timezone => "Asia/Singapore"},
+  {:name => "Berlin", :lat => 52.32, :long => 13.25, :timezone => "Europe/Berlin"},
+  {:name => "Madrid", :lat => 40.25, :long => 3.42, :timezone => "Europe/Madrid"},
+  {:name => "Buenos Aires", :lat => 34.34, :long => 58.03, :timezone => "America/Argentina/Buenos_Aires"},
 ]
 
 cities.each do |city|
-  City.find_or_create_by! name: city[:name], lat: city[:lat], long: city[:long]
+  City.find_or_create_by! name: city[:name], lat: city[:lat], long: city[:long], timezone: city[:timezone]
 end

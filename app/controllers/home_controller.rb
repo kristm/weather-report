@@ -4,6 +4,7 @@ class HomeController < ApplicationController
   end
 
   def forecast
+    @timezone = coords_params[:timezone]
     response = OpenMeteo::Client.forecast coords_params['lat'], coords_params['long']
     report = OpenMeteo::Client.report response
     days = report[:days].map { |day| format_day(day) }
@@ -19,10 +20,10 @@ class HomeController < ApplicationController
   end
 
   def format_time(date)
-    DateTime.parse(date).in_time_zone("Asia/Taipei").strftime("%l:%M %p")
+    DateTime.parse(date).in_time_zone(@timezone).strftime("%l:%M %p")
   end
 
   def coords_params
-    params.require(:coords).permit(:lat, :long)
+    params.require(:coords).permit(:lat, :long, :timezone)
   end
 end

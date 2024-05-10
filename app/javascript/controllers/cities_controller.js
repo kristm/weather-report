@@ -25,6 +25,7 @@ export default class extends Controller {
     const coords = {};
     coords['lat'] = event.target.getAttribute('data-lat');
     coords['long'] = event.target.getAttribute('data-long');
+    coords['timezone'] = event.target.getAttribute('data-timezone');
 
     post('/forecast', { body: {coords}, responseKind: 'turbo-stream' });
   }
