@@ -1,0 +1,7 @@
+one:
+  city_id: 1
+  codes: "1|2"
+  min_temps: "18.0|22.0"
+  max_temps: "23.0|26.0"
+  sunrise_times: "2024-05-08T19:42|2024-05-09T19:41"
+  sunset_times: "2024-05-09T09:34|2024-05-10T09:35"
