@@ -1,4 +1,4 @@
-<h3>7 day forecast</h3>
+<h3><%= t :seven_day_forecast %></h3>
 <dl>
 <%- codes.each_with_index do |code, index| %>
   <dd>
@@ -6,8 +6,8 @@
       <strong><%= "#{days[index]}" %></strong>
       <span><%= t "weather_codes.#{code}" %></span>
       <%- unless index > 0 %>
-        <p>Sunrise: <%= sunrise %></p>
-        <p>Sunset: <%= sunset %></p>
+        <p><%= t :sunrise %> <%= sunrise %></p>
+        <p><%= t :sunrise %>  <%= sunset %></p>
       <% end %>
     </div>
     <div class="icon">
