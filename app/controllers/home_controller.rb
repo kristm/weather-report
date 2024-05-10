@@ -19,7 +19,7 @@ class HomeController < ApplicationController
   end
 
   def format_time(date)
-    Date.parse(date).strftime("%l:%M %p")
+    DateTime.parse(date).in_time_zone("Asia/Taipei").strftime("%l:%M %p")
   end
 
   def coords_params
