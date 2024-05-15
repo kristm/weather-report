@@ -72,4 +72,6 @@ group :test do
   gem "selenium-webdriver"
   gem "minitest-rails", "~> 7.1.0"
   gem "webmock"
+  gem "mocha", "~> 2.2"
 end
+
