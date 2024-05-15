@@ -1,7 +1,7 @@
 require "test_helper"
 
-describe 'Forecast' do
-  before do
+class ForecastTest < ActiveSupport::TestCase
+  setup do
     @data = {
      "time"=> ["2024-05-09", "2024-05-10", "2024-05-11", "2024-05-12", "2024-05-13", "2024-05-14", "2024-05-15"],
      "weather_code"=>[51, 0, 3, 61, 65, 61, 2],
@@ -23,34 +23,30 @@ describe 'Forecast' do
     }
   end
 
-  describe "#serialize_forecast" do
-    it "serializes data" do
-      city = City.first
-      f = Forecast.new city: city
-      f.serialize_forecast @data
+  test "#serialize_forecast serializes data" do
+    city = City.first
+    f = Forecast.new city: city
+    f.serialize_forecast @data
 
-      assert_match /(\d{4}\-\d{2}\-\d{2}\|)+/, f.days
-      assert_match /(\d+\|)+/, f.codes
-      assert_match /(\d+\.\d+\|)+/, f.min_temps
-      assert_match /(\d+\.\d+\|)+/, f.max_temps
-      assert_match /(\d{4}\-\d{2}\-\d{2}T\d+:\d+\|)+/, f.sunrise_times
-      assert_match /(\d{4}\-\d{2}\-\d{2}T\d+:\d+\|)+/, f.sunset_times
-    end
+    assert_match /(\d{4}\-\d{2}\-\d{2}\|)+/, f.days
+    assert_match /(\d+\|)+/, f.codes
+    assert_match /(\d+\.\d+\|)+/, f.min_temps
+    assert_match /(\d+\.\d+\|)+/, f.max_temps
+    assert_match /(\d{4}\-\d{2}\-\d{2}T\d+:\d+\|)+/, f.sunrise_times
+    assert_match /(\d{4}\-\d{2}\-\d{2}T\d+:\d+\|)+/, f.sunset_times
   end
 
-  describe "#seven_day_forecast" do
-    it "converts to same format as api" do
-      city = City.first
-      f = Forecast.create(city: city,
-        days: @serialized_data[:time],
-        codes: @serialized_data[:weather_code],
-        min_temps: @serialized_data[:temperature_2m_min],
-        max_temps: @serialized_data[:temperature_2m_max],
-        sunrise_times: @serialized_data[:sunrise],
-        sunset_times: @serialized_data[:sunset]
-      )
-      report = f.seven_day_forecast
-      assert_equal report, {"city"=>"Manila"}.merge(@data)
-    end
+  test "#seven_day_forecast converts to same format as api" do
+    city = cities(:two)
+    f = Forecast.create(city: city,
+      days: @serialized_data[:time],
+      codes: @serialized_data[:weather_code],
+      min_temps: @serialized_data[:temperature_2m_min],
+      max_temps: @serialized_data[:temperature_2m_max],
+      sunrise_times: @serialized_data[:sunrise],
+      sunset_times: @serialized_data[:sunset]
+    )
+    report = f.seven_day_forecast
+    assert_equal report, {"city"=>"Manila"}.merge(@data)
   end
 end
